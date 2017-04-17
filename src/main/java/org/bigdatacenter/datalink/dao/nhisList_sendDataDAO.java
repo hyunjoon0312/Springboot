@@ -40,8 +40,9 @@ public class nhisList_sendDataDAO {
 				String requestORG = rs.getString(3);
 				String linkedORG = rs.getString(4);
 				int sendData = rs.getInt(5);
+				int takeLinkNum = rs.getInt(6);
 
-				NhisList_sendDataDTO nhisListDTO = new NhisList_sendDataDTO(IRB, rName, requestORG, linkedORG, sendData);
+				NhisList_sendDataDTO nhisListDTO = new NhisList_sendDataDTO(IRB, rName, requestORG, linkedORG, sendData, takeLinkNum);
 				nhisListDTOs.add(nhisListDTO);
 			}
 

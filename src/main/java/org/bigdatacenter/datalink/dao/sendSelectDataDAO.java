@@ -27,6 +27,11 @@ public class sendSelectDataDAO {
 	@Qualifier("jnecaTakeIDDataSource")
 	private DataSource jnecaTakeIDDataSource;
 	
+	
+	@Autowired
+	@Qualifier("dataSource")
+	private DataSource dataSource;
+	
 	public void sendSelectDataDAO(String person_ID[], String REPORT_YMD[], String ADDRESS[], String GENDER[], String DEATH_YMD[],String DEATH_TIME[],String DEATH_PLACE[],String DEATH_JOB[],String MARRY[],String EDU[],String DEATH_CAU1[], String DEATH_CAU1_Parent[], String DEATH_AGE[], String IRB_Num){
 		
 		String secretKey = null;
@@ -184,6 +189,34 @@ public class sendSelectDataDAO {
 				// TODO: handle exception
 			}
 		}
+		
+		
+
+		
+		
+		//cdc가 neca에게 데이터 보내줌 표시
+		
+		try {
+			
+			String IRB = IRB_Num;
+			IRB = IRB_Num.replaceAll("_", "-");
+					
+			con = dataSource.getConnection();
+			String sql = "UPDATE J_neca.Info set takePersonID = 1 WHERE IRB = '"+IRB+"'";
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if( con != null ){con.close();}
+				if( pstmt != null ){pstmt.close();}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		
 		
 
 		

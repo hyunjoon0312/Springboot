@@ -39,11 +39,14 @@
 			<input type="hidden" name="IRB" value="${necaList.IRB}" />
 			<input type="hidden" name="requestORG" value="${necaList.requestORG }"/>
 			<input type="hidden" name="linkedORG" value="${necaList.linkedORG }"/>
-			<c:if test="${necaList.sendLinknum == '0' }">
+			<c:if test="${necaList.sendLinknum == '0' && necaList.takePersonID == '1'}">
 			<input type="submit" value="전송" />
 			</c:if>
-			<c:if test="${necaList.sendLinknum == '1' }">
+			<c:if test="${necaList.sendLinknum == '1'}">
 			<input type="submit" value="전송완료" disabled="disabled" />
+			</c:if>
+			<c:if test="${necaList.sendLinknum == '0' && necaList.takePersonID == '0' }" >
+			<input type="submit" value="연계데이터미수신" disabled="disabled" />
 			</c:if>
 			</form>
 			</td>

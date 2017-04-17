@@ -33,18 +33,22 @@
 			<td>${cdcList_sendData.requestORG }</td>
 			<td>${cdcList_sendData.linkedORG }</td>
 		
-			
+			<td>
 			<form action="cdc_sendData" method="post">
 			<input type="hidden" name="IRB" value="${cdcList_sendData.IRB}" />
 			<input type="hidden" name="requestORG" value="${cdcList_sendData.requestORG }"/>
 			<input type="hidden" name="linkedORG" value="${cdcList_sendData.linkedORG }"/>
-			<c:if test="${cdcList_sendData.sendData == '0' }">
-			<td><input type="submit" value="전송" /></td>
+			<c:if test="${cdcList_sendData.sendData == '0' && cdcList_sendData.takeLinkNum == '1' }">
+			<input type="submit" value="전송" />
 			</c:if>
 			<c:if test="${cdcList_sendData.sendData == '1' }">
-			<td><input type="submit" value="전송완료" disabled="disabled" /></td>
+			<input type="submit" value="전송완료" disabled="disabled" />
+			</c:if>
+			<c:if test="${cdcList_sendData.sendData == '0' && cdcList_sendData.takeLinkNum == '0' }">
+			<input type="submit" value="연결번호없음" disabled="disabled">
 			</c:if>
 			</form>
+			</td>
 		</tr>
 		</c:forEach>
 		

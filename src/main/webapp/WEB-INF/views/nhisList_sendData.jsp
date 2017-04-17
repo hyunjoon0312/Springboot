@@ -39,11 +39,14 @@
 			<input type="hidden" name="IRB" value="${nhisList_sendData.IRB}" />
 			<input type="hidden" name="requestORG" value="${nhisList_sendData.requestORG }"/>
 			<input type="hidden" name="linkedORG" value="${nhisList_sendData.linkedORG }"/>
-			<c:if test="${nhisList_sendData.sendData == '0' }">
+			<c:if test="${nhisList_sendData.sendData == '0' && nhisList_sendData.takeLinkNum == '1'}">
 			<input type="submit" value="전송" />
 			</c:if>
 			<c:if test="${nhisList_sendData.sendData == '1' }">
 			<input type="submit" value="전송완료" disabled="disabled" />
+			</c:if>
+			<c:if test="${nhisList_sendData.sendData == '0' && nhisList_sendData.takeLinkNum == '0' }" >
+			<input type="submit" value="연결번호없음" disabled="disabled" />
 			</c:if>
 			</form>
 			</td>

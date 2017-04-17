@@ -40,8 +40,9 @@ public class necaListDAO {
 				String requestORG = rs.getString(3);
 				String linkedORG = rs.getString(4);
 				int sendLinknum = rs.getInt(5);
+				int takePersonID = rs.getInt(6);
 
-				NecaListDTO necaListDTO = new NecaListDTO(IRB, rName, requestORG, linkedORG, sendLinknum);
+				NecaListDTO necaListDTO = new NecaListDTO(IRB, rName, requestORG, linkedORG, sendLinknum, takePersonID);
 				necaListDTOs.add(necaListDTO);
 			}
 

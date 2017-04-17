@@ -27,14 +27,19 @@ public class sendLinkNumDAO {
 	@Autowired
 	@Qualifier("jNecaDataSource")
 	private DataSource jNecaDataSource;
+	
+	
+	@Autowired
+	@Qualifier("dataSource")
+	private DataSource dataSource;
 
 	public void sendLinkNum(String IRB, String requestORG, String linkedORG) {
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
 
-		// 요청기관에
-		// 전송---------------------------------------------------------------------
+		String re_IRB = IRB.replace("_", "-");
+		// 요청기관에 전송---------------------------------------------------------------------
 
 		System.out.println(requestORG);
 		if (requestORG.equals("권역심뇌혈관센터")) {
@@ -88,6 +93,32 @@ public class sendLinkNumDAO {
 					e2.printStackTrace();
 				}
 			}
+			
+			
+			
+			
+			//권역심뇌혈관센터에 연결번호 보내줌 표시
+			
+			
+			try {
+				
+				
+				con = dataSource.getConnection();
+				String sql = "UPDATE J_cdc.Info set takeLinkNum = 1 WHERE IRB = '"+re_IRB+"'";
+				
+				pstmt = con.prepareStatement(sql);
+				pstmt.executeUpdate();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				try {
+					if( con != null ){con.close();}
+					if( pstmt != null ){pstmt.close();}
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				}
+			}
+			
 
 		} else if (requestORG.equals("건강보험공단")) {
 
@@ -137,6 +168,26 @@ public class sendLinkNumDAO {
 					if (pstmt != null) {
 						pstmt.close();
 					}
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				}
+			}
+			
+			
+			//건보공단에 연결번호 보내줌 표시
+			
+			try {
+				con = dataSource.getConnection();
+				String sql = "UPDATE J_nhis.Info set takeLinkNum = 1 WHERE IRB = '"+re_IRB+"'";
+				
+				pstmt = con.prepareStatement(sql);
+				pstmt.executeUpdate();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				try {
+					if( con != null ){con.close();}
+					if( pstmt != null ){pstmt.close();}
 				} catch (Exception e2) {
 					e2.printStackTrace();
 				}
@@ -202,13 +253,34 @@ public class sendLinkNumDAO {
 					e2.printStackTrace();
 				}
 			}
+			
+			
+			//건보공단에 연결번호 보내줌 표시
+			
+			try {
+				con = dataSource.getConnection();
+				String sql = "UPDATE J_nhis.Info set takeLinkNum = 1 WHERE IRB = '"+re_IRB+"'";
+				
+				pstmt = con.prepareStatement(sql);
+				pstmt.executeUpdate();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				try {
+					if( con != null ){con.close();}
+					if( pstmt != null ){pstmt.close();}
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				}
+			}
+			
 		}
 
 		// neca에 연결번호 보냄 표시
 
 		try {
 			con = jNecaDataSource.getConnection();
-			String sql = "UPDATE J_neca.Info SET sendLinknum = 1 WHERE IRB = '" + IRB + "'";
+			String sql = "UPDATE J_neca.Info SET sendLinknum = 1 WHERE IRB = '" + re_IRB + "'";
 			pstmt = con.prepareStatement(sql);
 
 			pstmt.executeUpdate();

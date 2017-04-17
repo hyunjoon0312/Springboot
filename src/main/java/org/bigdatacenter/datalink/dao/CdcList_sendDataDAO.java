@@ -47,8 +47,9 @@ public class CdcList_sendDataDAO {
 				String requestORG = rs.getString(3);
 				String linkedORG = rs.getString(4);
 				int sendData = rs.getInt(5);
+				int takeLinkNum = rs.getInt(6);
 				
-				CdcList_sendDataDTO cdcList_sendDataDTO = new CdcList_sendDataDTO(IRB, rName, requestORG, linkedORG, sendData);
+				CdcList_sendDataDTO cdcList_sendDataDTO = new CdcList_sendDataDTO(IRB, rName, requestORG, linkedORG, sendData, takeLinkNum);
 				cdcList_sendDataDTOs.add(cdcList_sendDataDTO);
 			}
 			

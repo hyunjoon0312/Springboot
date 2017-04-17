@@ -8,14 +8,36 @@ public class NecaListDTO {
 	private String requestORG;
 	private String linkedORG;
 	private int sendLinknum;
+	private int takePersonID;
 	
-	public NecaListDTO(String IRB, String rName, String requestORG, String linkedORG, int sendLinknum){
+	public NecaListDTO(String IRB, String rName, String requestORG, String linkedORG, int sendLinknum, int takePersonID){
 		this.IRB = IRB;
 		this.rName = rName;
 		this.requestORG = requestORG;
 		this.linkedORG = linkedORG;
 		this.sendLinknum = sendLinknum;
+		this.takePersonID = takePersonID;
 	}
+
+	
+
+
+
+	public int getTakePersonID() {
+		return takePersonID;
+	}
+
+
+
+
+
+	public void setTakePersonID(int takePersonID) {
+		this.takePersonID = takePersonID;
+	}
+
+
+
+
 
 	public String getIRB() {
 		return IRB;

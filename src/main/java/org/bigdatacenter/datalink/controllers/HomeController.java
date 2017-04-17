@@ -20,6 +20,18 @@ public class HomeController {
 		return "home";
 	}
 	
+	@RequestMapping("/index")
+	public String index(){
+		return "index";
+	}
+	
+	
+	@RequestMapping("/cdc_main")
+	public String cdc_main(){
+		return "cdc_main";
+	}
+
+	
 //	@RequestMapping("/linkRequestForm")
 //	public String linkRequestForm(Model model){
 //		

@@ -71,7 +71,7 @@ public class sendSecretKeyDAO {
 				// 요청에 대한 정보 전송
 				try {
 					con = jCdcTakeKeyDataSource.getConnection();
-					String sql = "INSERT INTO J_cdc.Info VALUES(?,?,?,?,?)";
+					String sql = "INSERT INTO J_cdc.Info VALUES(?,?,?,?,?,?)";
 
 					pstmt = con.prepareStatement(sql);
 
@@ -80,6 +80,7 @@ public class sendSecretKeyDAO {
 					pstmt.setString(3, requestORG);
 					pstmt.setString(4, linkedORG);
 					pstmt.setInt(5, 0);
+					pstmt.setInt(6, 0);
 					
 					pstmt.executeUpdate();
 					
@@ -124,7 +125,7 @@ public class sendSecretKeyDAO {
 
 			try {
 				con = jNhisTakeKeyDataSource.getConnection();
-				String sql = "INSERT INTO J_nhis.Info VALUES(?,?,?,?,?)";
+				String sql = "INSERT INTO J_nhis.Info VALUES(?,?,?,?,?,?)";
 
 				pstmt = con.prepareStatement(sql);
 
@@ -133,6 +134,7 @@ public class sendSecretKeyDAO {
 				pstmt.setString(3, requestORG);
 				pstmt.setString(4, linkedORG);
 				pstmt.setInt(5, 0);
+				pstmt.setInt(6, 0);
 
 				pstmt.executeUpdate();
 				System.out.println("건강보험공단에 요청 정보 전달");
@@ -179,7 +181,7 @@ public class sendSecretKeyDAO {
 			
 					try {
 						con = jNhisTakeKeyDataSource.getConnection();
-						String sql = "INSERT INTO J_nhis.Info VALUES(?,?,?,?,?)";
+						String sql = "INSERT INTO J_nhis.Info VALUES(?,?,?,?,?,?)";
 
 						pstmt = con.prepareStatement(sql);
 
@@ -188,6 +190,7 @@ public class sendSecretKeyDAO {
 						pstmt.setString(3, requestORG);
 						pstmt.setString(4, linkedORG);
 						pstmt.setInt(5, 0);
+						pstmt.setInt(6, 0);
 
 						pstmt.executeUpdate();
 						System.out.println("건강보험공단에 요청 정보 전달");
@@ -211,7 +214,7 @@ public class sendSecretKeyDAO {
 
 		try {
 				con = jNecaDataSource.getConnection();
-				String sql = "INSERT INTO J_neca.Info VALUES(?,?,?,?,?)";
+				String sql = "INSERT INTO J_neca.Info VALUES(?,?,?,?,?,?)";
 
 				pstmt = con.prepareStatement(sql);
 
@@ -220,6 +223,7 @@ public class sendSecretKeyDAO {
 				pstmt.setString(3, requestORG);
 				pstmt.setString(4, linkedORG);
 				pstmt.setInt(5, 0);
+				pstmt.setInt(6, 0);
 
 				pstmt.executeUpdate();
 				System.out.println("NECA에 요청 정보 전달");
@@ -262,7 +266,7 @@ public class sendSecretKeyDAO {
 
 		try {
 			con = dataSource.getConnection();
-			String sql = "INSERT INTO J_linker.Info VALUES(?,?,?,?,?)";
+			String sql = "INSERT INTO J_linker.Info VALUES(?,?,?,?,?,?,?,?,?)";
 
 			pstmt = con.prepareStatement(sql);
 
@@ -271,6 +275,10 @@ public class sendSecretKeyDAO {
 			pstmt.setString(3, requestORG);
 			pstmt.setString(4, linkedORG);
 			pstmt.setInt(5, 0);
+			pstmt.setInt(6, 0);
+			pstmt.setInt(7, 0);
+			pstmt.setInt(8, 0);
+			pstmt.setInt(9, 0);
 
 			pstmt.executeUpdate();
 			System.out.println("연계기관에 요청 정보 전달");

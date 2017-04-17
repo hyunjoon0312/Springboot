@@ -7,15 +7,31 @@ public class NhisList_sendDataDTO {
 	private String requestORG;
 	private String linkedORG;
 	private int sendData;
+	private int takeLinkNum;
 	
-	public NhisList_sendDataDTO(String IRB, String rName, String requestORG, String linkedORG, int sendData){
+	public NhisList_sendDataDTO(String IRB, String rName, String requestORG, String linkedORG, int sendData, int takeLinkNum){
 		this.IRB = IRB;
 		this.rName = rName;
 		this.requestORG = requestORG;
 		this.linkedORG = linkedORG;
 		this.sendData = sendData;
+		this.takeLinkNum = takeLinkNum;
 	}
 	
+	
+	
+	public int getTakeLinkNum() {
+		return takeLinkNum;
+	}
+
+
+
+	public void setTakeLinkNum(int takeLinkNum) {
+		this.takeLinkNum = takeLinkNum;
+	}
+
+
+
 	public String getIRB() {
 		return IRB;
 	}
