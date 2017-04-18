@@ -35,7 +35,7 @@
 		
 			
 			<td>
-			<form action="nhis_linkData" method="post">
+			<form action="linkData" method="post">
 			<input type="hidden" name="IRB" value="${linkerList.IRB}" />
 			<input type="hidden" name="requestORG" value="${linkerList.requestORG }"/>
 			<input type="hidden" name="linkedORG" value="${linkerList.linkedORG }"/>

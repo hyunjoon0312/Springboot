@@ -218,8 +218,29 @@ public class sendSelectDataDAO {
 		}
 		
 		
+		
+		//CDC가 가지고 있는 secretKey 삭제
 
 		
-		
+		try {
+			
+			String IRB = IRB_Num;
+			IRB = IRB_Num.replaceAll("_", "-");
+					
+			con = dataSource.getConnection();
+			String sql = "DELETE FROM J_cdcTakeKey.request_secretKey WHERE IRB = '"+IRB+"'";
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if( con != null ){con.close();}
+				if( pstmt != null ){pstmt.close();}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
 	}//end
 }
