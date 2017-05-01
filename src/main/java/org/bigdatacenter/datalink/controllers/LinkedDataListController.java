@@ -2,10 +2,9 @@ package org.bigdatacenter.datalink.controllers;
 
 import java.util.ArrayList;
 
-import javax.servlet.http.HttpServletRequest;
-
-import org.bigdatacenter.datalink.dao.LinkedDataListDAO;
-import org.bigdatacenter.datalink.dto.LinkedDataListDTO;
+import org.bigdatacenter.datalink.dao.LinkedData_List_DAO;
+import org.bigdatacenter.datalink.dto.LinkedData_List_DTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,20 +12,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class LinkedDataListController {
 
-
-	private LinkedDataListDAO linkedDataListDAO;
+	@Autowired
+	private LinkedData_List_DAO linkedData_List_DAO;
 	
-	@RequestMapping("/linkedData")
-	public String linkedDataLsit(HttpServletRequest request, Model model){
+	@RequestMapping("/linkedDataList")
+	public String linkedDataList(Model model){
 		
 		System.out.println("controller.LinkedDataListController");
 		
-		String IRB = request.getParameter("IRB");
+		ArrayList<LinkedData_List_DTO> linkedData_List_DTOs;
+		linkedData_List_DTOs = linkedData_List_DAO.LinkedDataList();
+		model.addAttribute("linkedDataList", linkedData_List_DTOs);
 		
-		ArrayList<LinkedDataListDTO> linkedDataListDTOs;
-		linkedDataListDTOs = linkedDataListDAO.linkedDataList(IRB);
-		model.addAttribute("linkedDataList", linkedDataListDTOs);		
+		System.out.println(linkedData_List_DTOs);
+		return "linkedData_List";
 		
-		return "linkedData";
 	}
 }

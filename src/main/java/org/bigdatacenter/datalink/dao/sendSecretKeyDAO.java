@@ -293,5 +293,34 @@ public class sendSecretKeyDAO {
 				}
 		}
 		
+		
+		
+		//연계된 데이터에 대한 정보
+		
+		try {
+			con = dataSource.getConnection();
+			String sql = "INSERT INTO J_linkedData.Info VALUES(?,?,?,?,?)";
+
+			pstmt = con.prepareStatement(sql);
+
+			pstmt.setString(1, IRB);
+			pstmt.setString(2, Rname);
+			pstmt.setString(3, requestORG);
+			pstmt.setString(4, linkedORG);
+			pstmt.setInt(5, 0);
+
+			pstmt.executeUpdate();
+			System.out.println("연계데이터에 대한 정보 전달");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try{
+				if (con != null) { con.close();}
+				if (pstmt != null) { pstmt.close();}
+				}catch (Exception e2) {
+					e2.printStackTrace();
+				}
+		}
+		
 	}//sendSecretkey end
 }

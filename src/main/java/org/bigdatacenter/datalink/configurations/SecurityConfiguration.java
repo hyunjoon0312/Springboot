@@ -14,12 +14,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/resources/**");
+//		web.ignoring().antMatchers("/resources/**");
+		web.ignoring().antMatchers("/**");
+		
+	
 	}
 
 	@Autowired
 	public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication().withUser("bill").password("abc123").roles("USER");
+		auth.inMemoryAuthentication().withUser("joon").password("1234qwer").roles("USER");
 		auth.inMemoryAuthentication().withUser("admin").password("root123").roles("ADMIN");
 		auth.inMemoryAuthentication().withUser("dba").password("root123").roles("ADMIN","DBA");
 	}
@@ -30,7 +33,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	  http.httpBasic().disable();
 		
 	  http.authorizeRequests() 
-		.antMatchers("/R_linkedData/**").access("hasRole('ADMIN')")
+		.antMatchers("/R_linkedData/**").access("hasRole('USER')")
 		.anyRequest().authenticated()
 		.and().formLogin().loginPage("/login").permitAll()
 		.usernameParameter("ssoId")

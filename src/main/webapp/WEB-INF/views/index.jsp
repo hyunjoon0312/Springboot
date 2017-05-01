@@ -28,6 +28,10 @@
    	<div class="box5" onclick="window.open('necaList');"><br>한국보건<br>의료연구원</div>
     <div class="box6" onclick="window.open('linkerList');"><br>데이터<br> 연계<br> 플랫폼</div>
 </div>
+    
+<div id="foot" >
+	<div onclick="window.open('linkedDataList');">안전 저장소</div>    
+</div>
 
 
 

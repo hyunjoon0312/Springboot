@@ -103,5 +103,26 @@ public class DataLinkDAO {
 			}
 		}
 		
+		
+		//연계데이터 저장 정보 표시 : J_linkedData에 
+		
+		try {
+			con = dataSource.getConnection();
+			String sql = "UPDATE J_linkedData.Info set linkData = 1 WHERE IRB = '"+IRB+"'";
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if( con != null ){con.close();}
+				if( pstmt != null ){pstmt.close();}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		
+		
 	}// end
 }

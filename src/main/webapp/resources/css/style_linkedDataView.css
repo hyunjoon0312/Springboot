@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+body{
+	font-family:'Nanum Gothic', sans-serif;
+}
+
+#cdc{
+	color:#5882FA;
+}
+
+#nhis{
+	color:#04B45F;
+}
+
+p{
+	font-style:italic;
+	text-align:center;
+	
+}
+
+h1{
+	text-align:center;
+}
+
+span{
+	font-weight:600;
+}
+
+div{
+	
+}
