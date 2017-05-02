@@ -2,7 +2,7 @@ package org.bigdatacenter.datalink.dto;
 
 public class LinkedDataDTO {
 
-	private int No;
+	private int NO;
 	private String REPORT_YMD;
 	private int ADDRESS;
 	private int GENDER;
@@ -33,7 +33,7 @@ public class LinkedDataDTO {
 			int MARRY, int EDU, String DEATH_CAU1, String DEATH_CAU1_Parent, int DEATH_AGE, int STND_Y, int YKIHO_ID, 
 			int YKIHO_GUBUN_CD, int ORG_TYPE, int YKIHO_SIDO, int SICKBED_CNT, int DR_CNT, int CT_YN, int MRI_YN, int PET_YN){
 		
-		this.No = No;
+		this.NO = No;
 		this.REPORT_YMD = REPORT_YMD;
 		this.ADDRESS = ADDRESS;
 		this.GENDER = GENDER;
@@ -61,13 +61,13 @@ public class LinkedDataDTO {
 	
 	
 	
-	public int getNo() {
-		return No;
+	public int getNO() {
+		return NO;
 	}
 
 
-	public void setNo(int no) {
-		No = no;
+	public void setNO(int no) {
+		NO = no;
 	}
 
 
@@ -209,7 +209,7 @@ public class LinkedDataDTO {
 
 	@Override
 	public String toString() {
-		return "LinkedDataDTO [No=" + No + ", REPORT_YMD=" + REPORT_YMD + ", ADDRESS=" + ADDRESS + ", GENDER=" + GENDER
+		return "LinkedDataDTO [NO=" + NO + ", REPORT_YMD=" + REPORT_YMD + ", ADDRESS=" + ADDRESS + ", GENDER=" + GENDER
 				+ ", DEATH_YMD=" + DEATH_YMD + ", DEATH_TIME=" + DEATH_TIME + ", DEATH_PLACE=" + DEATH_PLACE
 				+ ", DEATH_JOB=" + DEATH_JOB + ", MARRY=" + MARRY + ", EDU=" + EDU + ", DEATH_CAU1=" + DEATH_CAU1
 				+ ", DEATH_CAU1_Parent=" + DEATH_CAU1_Parent + ", DEATH_AGE=" + DEATH_AGE + ", STND_Y=" + STND_Y

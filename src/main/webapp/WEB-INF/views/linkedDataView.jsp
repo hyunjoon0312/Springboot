@@ -54,8 +54,7 @@
 			<tbody>
 			<c:forEach items="${linkedDataList}" var="linkedData">
 			<tr>
-					<td>${linkedData.No }</td>
-					<td>${linkedData.PERSON_ID }</td>
+					<td>${linkedData.NO }</td>
 					<td>${linkedData.REPORT_YMD}</td>
 					<td>${linkedData.ADDRESS}</td>
 					<td>${linkedData.GENDER}</td>
