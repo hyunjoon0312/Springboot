@@ -21,6 +21,7 @@ p{
 
 h1{
 	text-align:center;
+	display: inline;
 }
 
 span{
@@ -30,3 +31,8 @@ span{
 div{
 	
 }
+
+#back{
+	margin: 0px 0px 0px 30px;
+}
+

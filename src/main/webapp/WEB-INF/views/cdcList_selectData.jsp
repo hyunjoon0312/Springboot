@@ -43,15 +43,21 @@
 </script>
 </head>
 <body>
-	<h1>권역심뇌혈관센터 데이터 목록</h1>
+	<div style="text-align:center">
+		<h1 style="display:inline;">권역심뇌혈관센터 데이터 목록</h1>
+		<div style="float:right">
+			<input style="width:100px; height:30px; font-size:15px;" id ="back" type="button" value="뒤로가기" onclick="javascript:location.href='./cdc_main';"/>
+		</div>
+	</div>
 
-
-	<form method="post" action="sendSelectData" name='f1'>
-		IRB 번호 : <select name="IRB_Num">
-			<c:forEach items="${IRBList}" var="IRBList">
-				<option value="${IRBList.sIRB}" label="${IRBList.sIRB }"></option>
-			</c:forEach>
-		</select> <input type="submit" value="전송" />
+	<div style="margin:50px 0 20px 240px;">
+		<form method="post" action="sendSelectData" name='f1'>
+			<span style="font-size:20px;">IRB 번호 :</span> <select style="width:100px; height:22px; font-size:18px;" name="IRB_Num">
+				<c:forEach items="${IRBList}" var="IRBList">
+					<option value="${IRBList.sIRB}" label="${IRBList.sIRB }"></option>
+				</c:forEach>
+			</select> <input type="submit" value="전송" />
+	</div>
 
 
 	<table id='table1' border="1" cellspacing="0"

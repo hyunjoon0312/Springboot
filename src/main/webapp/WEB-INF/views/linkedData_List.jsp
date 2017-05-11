@@ -5,13 +5,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link href="/resources/css/style_linkedDataView.css" rel="stylesheet" type="text/css" media="all" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>안전저장소 데이터 목록</title>
 </head>
 <body>
 
 	<h1>연계기관에서 연계 요청 받은 데이터 목록</h1>
-
+<br>
+<div id="linkedData_List">
 	<table id="tb" border="1" cellspacing="0"
 		style="margin: 0 auto; text-align: center;">
 
@@ -53,5 +55,6 @@
 		</c:forEach>
 		</table>
 		
+</div>
 </body>
 </html>

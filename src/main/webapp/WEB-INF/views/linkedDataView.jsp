@@ -16,7 +16,12 @@
 	String requestORG = (String)request.getAttribute("requestORG");
 	String linkedORG = (String)request.getAttribute("linkedORG");
 	%>
-	<h1>연계 데이터</h1>
+	<div style="text-align:center">
+		<h1 style="display:inline">연계 데이터</h1>
+		<div  style="float:right">
+			<input style="width:100px; height:30px; font-size:15px;" type="button" value="뒤로가기" onclick="javascript:location.href='./linkedDataList';"/>
+		</div>
+	</div>
 	<p style="font-size:20px"><span>IRB 번호 :</span> <%=IRB %> &emsp; <span>연구자 :</span> <%=rName %> &emsp; <span>연계참여기관 :</span> <%=requestORG %>, <%=linkedORG %> </p>
 	<br><br>
 
@@ -53,7 +58,7 @@
 			</tr>
 			<tbody>
 			<c:forEach items="${linkedDataList}" var="linkedData">
-			<tr>
+			<tr onmouseover="this.style.background='yellow'" onmouseout="this.style.background='white'">
 					<td>${linkedData.NO }</td>
 					<td>${linkedData.REPORT_YMD}</td>
 					<td>${linkedData.ADDRESS}</td>

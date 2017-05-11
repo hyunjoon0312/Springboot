@@ -72,10 +72,11 @@ a {color:inherit; text-decoration:none;}
 
 
 
-
 h1{
 	padding:20px;
+	margin: 0 auto;
 }
 tr{height: 40px;}
 
 body{padding:20px;}
+
