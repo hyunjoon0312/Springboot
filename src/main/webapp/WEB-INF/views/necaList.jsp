@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	<h1>한국보건의료 연구원 데이터 요청 목록</h1>
+	<center><h1>한국보건의료 연구원 데이터 요청 목록</h1></center>
 
 	<table id="tb" border="1" cellspacing="0"
 		style="margin: 0 auto; text-align: center;">

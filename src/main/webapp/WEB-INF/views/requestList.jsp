@@ -19,7 +19,7 @@
 <title>사회보장정보원</title>
 </head>
 <body>
-	<h1>사회보장정보원 요청 데이터 목록</h1>
+	<center><h1 sytl>사회보장정보원 요청 데이터 목록</h1></center>
 	<br>
 	<br>
 

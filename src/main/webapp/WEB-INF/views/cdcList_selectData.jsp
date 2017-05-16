@@ -62,9 +62,9 @@
 
 	<table id='table1' border="1" cellspacing="0"
 			style="margin: 0 auto; text-align: center;">
-
+<thead>
 			<tr>
-				<th>선택<input name='checks' id="checkAll" class="checkBox"
+				<th>선택<input name='check' id="checkAll" class="checkBox"
 					type='checkbox'></th>
 				<th>주민등록번호</th>
 				<th>REPORT_YMD</th>
@@ -80,7 +80,7 @@
 				<th>DEATH_CAU1_Parent</th>
 				<th>DEATH_AGE</th>
 
-			</tr>
+			</tr></thead>
 			<tbody>
 			<c:forEach items="${cdcList_selectData}" var="cdcList_selectData">
 			<tr>

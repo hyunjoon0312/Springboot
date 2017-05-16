@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="/resources/css/style_linkedDataView.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/resources/css/style_linkedDataView.css?ver=3" rel="stylesheet" type="text/css" media="all" />
 <title>Insert title here</title>
 </head>
 <body>
@@ -59,30 +59,30 @@
 			<tbody>
 			<c:forEach items="${linkedDataList}" var="linkedData">
 			<tr onmouseover="this.style.background='yellow'" onmouseout="this.style.background='white'">
-					<td>${linkedData.NO }</td>
-					<td>${linkedData.REPORT_YMD}</td>
-					<td>${linkedData.ADDRESS}</td>
-					<td>${linkedData.GENDER}</td>
-					<td>${linkedData.DEATH_YMD}</td>
-					<td>${linkedData.DEATH_TIME}</td>
-					<td>${linkedData.DEATH_PLACE}</td>
-					<td>${linkedData.DEATH_JOB}</td>
-					<td>${linkedData.MARRY}</td>
-					<td>${linkedData.EDU}</td>
-					<td>${linkedData.DEATH_CAU1}</td>
-					<td>${linkedData.DEATH_CAU1_Parent}</td>
-					<td>${linkedData.DEATH_AGE}</td>
+					<td id=cdc_cont>${linkedData.NO }</td>
+					<td id=cdc_cont>${linkedData.REPORT_YMD}</td>
+					<td id=cdc_cont>${linkedData.ADDRESS}</td>
+					<td id=cdc_cont>${linkedData.GENDER}</td>
+					<td id=cdc_cont>${linkedData.DEATH_YMD}</td>
+					<td id=cdc_cont>${linkedData.DEATH_TIME}</td>
+					<td id=cdc_cont>${linkedData.DEATH_PLACE}</td>
+					<td id=cdc_cont>${linkedData.DEATH_JOB}</td>
+					<td id=cdc_cont>${linkedData.MARRY}</td>
+					<td id=cdc_cont>${linkedData.EDU}</td>
+					<td id=cdc_cont>${linkedData.DEATH_CAU1}</td>
+					<td id=cdc_cont>${linkedData.DEATH_CAU1_Parent}</td>
+					<td id=cdc_cont>${linkedData.DEATH_AGE}</td>
 				
-					<td>${linkedData.STND_Y}</td>
-					<td>${linkedData.YKIHO_ID}</td>
-					<td>${linkedData.YKIHO_GUBUN_CD}</td>
-					<td>${linkedData.ORG_TYPE}</td>
-					<td>${linkedData.YKIHO_SIDO}</td>
-					<td>${linkedData.SICKBED_CNT}</td>
-					<td>${linkedData.DR_CNT}</td>
-					<td>${linkedData.CT_YN}</td>
-					<td>${linkedData.MRI_YN}</td>
-					<td>${linkedData.PET_YN}</td>
+					<td id=nhis_cont>${linkedData.STND_Y}</td>
+					<td id=nhis_cont>${linkedData.YKIHO_ID}</td>
+					<td id=nhis_cont>${linkedData.YKIHO_GUBUN_CD}</td>
+					<td id=nhis_cont>${linkedData.ORG_TYPE}</td>
+					<td id=nhis_cont>${linkedData.YKIHO_SIDO}</td>
+					<td id=nhis_cont>${linkedData.SICKBED_CNT}</td>
+					<td id=nhis_cont>${linkedData.DR_CNT}</td>
+					<td id=nhis_cont>${linkedData.CT_YN}</td>
+					<td id=nhis_cont>${linkedData.MRI_YN}</td>
+					<td id=nhis_cont>${linkedData.PET_YN}</td>
 				</tr>
 				</c:forEach>
 			</tbody>

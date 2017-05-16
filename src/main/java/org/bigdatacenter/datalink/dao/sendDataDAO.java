@@ -347,29 +347,29 @@ public class sendDataDAO {
 				}
 				
 				
-				//nhis 전부 암호화한 DB 삭제
-				
-				
-				try {
-					con = dataSource.getConnection();
-					String sql = "DROP TABLE J_nhisSecretData."+db_IRB;
-					
-					pstmt = con.prepareStatement(sql);
-					pstmt.executeUpdate();
-					
-					System.out.println("nhis 전부 암호화한 DB 테이블 삭제");
-				} catch (Exception e) {
-					e.printStackTrace();
-				}finally {
-					try {
-						if ( con != null ){ con.close();}
-						if ( pstmt != null){ pstmt.close();}
-					} catch (Exception e2) {
-						e2.printStackTrace();
-					}
-				}
-		
-		
+//				//nhis 전부 암호화한 DB 삭제
+//				
+//				
+//				try {
+//					con = dataSource.getConnection();
+//					String sql = "DROP TABLE J_nhisSecretData."+db_IRB;
+//					
+//					pstmt = con.prepareStatement(sql);
+//					pstmt.executeUpdate();
+//					
+//					System.out.println("nhis 전부 암호화한 DB 테이블 삭제");
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}finally {
+//					try {
+//						if ( con != null ){ con.close();}
+//						if ( pstmt != null){ pstmt.close();}
+//					} catch (Exception e2) {
+//						e2.printStackTrace();
+//					}
+//				}
+//		
+//		
 	}//end
 	
 	

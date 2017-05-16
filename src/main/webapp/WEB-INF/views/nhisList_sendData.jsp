@@ -10,7 +10,7 @@
 <body>
 
 
-	<h1>건강보험공단 연계 요청 받은 데이터 목록</h1>
+	<center><h1>건강보험공단 연계 요청 받은 데이터 목록</h1></center>
 
 	<table id="tb" border="1" cellspacing="0"
 		style="margin: 0 auto; text-align: center;">

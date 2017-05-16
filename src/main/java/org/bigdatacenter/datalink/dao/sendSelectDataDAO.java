@@ -9,6 +9,7 @@ import javax.sql.DataSource;
 import org.bigdatacenter.datalink.svc.SHA256Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.dao.PessimisticLockingFailureException;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -102,10 +103,10 @@ public class sendSelectDataDAO {
 			
 			pstmt = con.prepareStatement(sql);
 			
-			
+			System.err.println(person_ID.length+"				"+person_ID[0]);
 			
 			for(int i = 0 ; i < person_ID.length ; i++){
-			
+				if(person_ID[i].equals("on")) continue;
 				System.out.println(person_ID[i]);
 				pstmt.setString(1, sha256Util.SHA256Encode(person_ID[i]));
 				pstmt.setString(2, REPORT_YMD[i]);
